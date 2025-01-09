@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/08 14:25:22 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/09 09:29:21 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@
 
 /*=============ERROR_HANDLER=============*/
 void	print_error(char *error);
+size_t	file_lines(char *name);
 bool	has_obvious_error(char **argv, int ac);
+char	**read_map(char *name);
 #endif
