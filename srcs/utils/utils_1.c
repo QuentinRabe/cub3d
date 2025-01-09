@@ -1,53 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils_1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/08 13:25:23 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/09 13:52:32 by arabefam         ###   ########.fr       */
+/*   Created: 2025/01/09 12:02:34 by arabefam          #+#    #+#             */
+/*   Updated: 2025/01/09 12:10:53 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
 
-void	free_array(char **arr)
+bool	is_only(char *set, char *str)
 {
-	int	i;
+	int		i;
+	int		j;
+	size_t	count;
 
 	i = -1;
-	while (arr[++i])
-		free(arr[i]);
-	free(arr);
-}
-
-void	print_map(char **map)
-{
-	int	i;
-
-	i = 0;
-	while (map[i])
+	count = 0;
+	while (str[++i])
 	{
-		if (!is_only(SPACES, map[i]))
-			printf("%s", map[i]);
-		i++;
+		j = -1;
+		while (set[++j])
+		{
+			if (str[i] == set[j])
+			{
+				count++;
+				break;
+			}
+		}
 	}
-}
-
-int	main(int ac, char **argv)
-{
-	char	**map;
-
-	if (!has_obvious_error(argv, ac))
-	{
-		map = read_content(argv[1]);
-		print_map(map);
-		parse(map);
-		free_array(map);
-		ft_putstr_fd("No error.\n", 1);
-	}
+	if (count == ft_strlen(str))
+		return (true);
 	else
-		exit (1);
-	return (0);
+		return (false);
 }

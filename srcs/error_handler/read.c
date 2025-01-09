@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 08:45:43 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/09 09:53:09 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/09 13:52:18 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	file_lines(char *name)
 	return (count);
 }
 
-char	**read_map(char *name)
+char	**read_content(char *name)
 {
 	int		fd;
 	size_t	lines;
