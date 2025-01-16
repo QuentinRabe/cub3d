@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/09 14:02:00 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:34:38 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <libft.h>
 # include <get_next_line.h>
 
+/*=============UTILS=============*/
+void	free_array(char **arr);
 /*=============ERROR_HANDLER=============*/
 void	print_error(char *error);
 size_t	file_lines(char *name);

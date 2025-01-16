@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:02:34 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/09 12:10:53 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:37:03 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ bool	is_only(char *set, char *str)
 			if (str[i] == set[j])
 			{
 				count++;
-				break;
+				break ;
 			}
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:25:23 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/09 13:52:32 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:35:20 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	main(int ac, char **argv)
 	if (!has_obvious_error(argv, ac))
 	{
 		map = read_content(argv[1]);
-		print_map(map);
 		parse(map);
 		free_array(map);
 		ft_putstr_fd("No error.\n", 1);
