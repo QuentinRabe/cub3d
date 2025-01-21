@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:16 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 11:33:49 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 15:48:26 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ size_t index, int *count)
 	size_t	len;
 	int		fd;
 
+	
 	len = ft_strlen_charset(content + index, '\n');
 	filename = ft_substr(content, index, len);
 	fd = open(filename, O_RDONLY);
@@ -39,14 +40,18 @@ size_t index, int *count)
 static void	check_texture_path(char *content, char **contents)
 {
 	size_t		index;
+	int			i;
 	static int	count = 0;
 
+	i = 0;
+	skip(SPACES, content, &i);
 	if (count < 4)
 	{
-		index = ft_strlen_set(content, SPACES) + 1;
+		index = ft_strlen_set(content + i, SPACES) + 1;
 		if (index == 2)
 			return ;
-		try_to_open_file(content, contents, index, &count);
+		skip(SPACES, content + i, &i);
+		try_to_open_file(content + i, contents, index, &count);
 	}
 	if (count == 4)
 		count = 0;
@@ -72,11 +77,13 @@ static void	check_valid_identifier(char *content, char **contents)
 {
 	char		*id;
 	size_t		len;
+	int			i = 0;
 	static int	bits = 0;
 	static int	count = 0;
 
-	len = ft_strlen_set(content, SPACES);
-	id = ft_substr(content, 0, len);
+	skip(SPACES, content, &i);
+	len = ft_strlen_set(content + i, SPACES);
+	id = ft_substr(content, i, len);
 	check_id(id, &bits);
 	free(id);
 	count++;

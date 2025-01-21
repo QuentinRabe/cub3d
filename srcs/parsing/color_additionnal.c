@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:26:52 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 11:52:52 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:58:28 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static void	ft_atoi_check(char *color, char **contents, char **colors)
 {
 	if (!is_only(NUMBERS, color) || !is_in_rgb_range(ft_atoi(color)))
 	{
+		printf("[%s]\n", color);
 		free_array(contents);
 		free_array(colors);
 		print_error("Color should be a number between 0 and 255");
@@ -33,6 +34,7 @@ void	check_color_values(char *content, char **contents)
 	char	**splitted;
 	int		i;
 
+	printf("[%s]->content\n", content);
 	splitted = ft_split(content, ',');
 	i = -1;
 	while (splitted[++i])

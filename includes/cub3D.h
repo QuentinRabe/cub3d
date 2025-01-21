@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 11:34:01 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:31:00 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ void	parse(char **content, t_vars *vars);
 void	parse_texture(char **contents);
 void	parse_color(char **contents);
 void	check_color_values(char *content, char **contents);
+void	store_texture(char **contents, t_txt t[4]);
 #endif

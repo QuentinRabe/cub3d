@@ -1,34 +1,10 @@
-F 								220,100,0
-
-
-
-
-
-
-
+	F 								220,100,0
 
 C 						225,25,0
 
-
-
-
-
-NO ./main.c
-
-
-
-
+    NO 					./main.c
 EA ./main.c
-
-
-
-
-
 SO ./main.c
-
-
-
-
 WE ./main.c
 
 
