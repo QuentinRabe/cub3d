@@ -6,13 +6,13 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:16 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 10:49:41 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:33:49 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
 
-static size_t	try_to_open_file(char *content, char **contents, \
+static void	try_to_open_file(char *content, char **contents, \
 size_t index, int *count)
 {
 	char	*filename;
@@ -34,25 +34,19 @@ size_t index, int *count)
 	close(fd);
 	(*count)++;
 	free(filename);
-	return (len);
 }
 
-static void	check_texture_path(char *content, char **contents, \
-t_txt t[4], int *j)
+static void	check_texture_path(char *content, char **contents)
 {
 	size_t		index;
 	static int	count = 0;
-	size_t		len;
 
 	if (count < 4)
 	{
 		index = ft_strlen_set(content, SPACES) + 1;
 		if (index == 2)
 			return ;
-		len = try_to_open_file(content, contents, index, &count);
-		t[*j].id = ft_substr(content, 0, 2);
-		t[*j].path = ft_substr(content, index, len);
-		(*j)++;
+		try_to_open_file(content, contents, index, &count);
 	}
 	if (count == 4)
 		count = 0;
@@ -101,21 +95,19 @@ static void	check_valid_identifier(char *content, char **contents)
 	}
 }
 
-void	parse_texture(char **contents, t_txt t[4])
+void	parse_texture(char **contents)
 {
 	int	i;
 	int	count;
-	int	j;
 
 	i = -1;
 	count = 0;
-	j = 0;
 	while (count < 6 && contents[++i])
 	{
 		if (is_only(SPACES, contents[i]))
 			continue ;
 		check_valid_identifier(contents[i], contents);
-		check_texture_path(contents[i], contents, t, &j);
+		check_texture_path(contents[i], contents);
 		count++;
 	}
 }

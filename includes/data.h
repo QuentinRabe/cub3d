@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 10:00:34 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:32:35 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@ typedef struct s_vars	t_vars;
 typedef struct s_txt	t_txt;
 typedef struct s_colors	t_colors;
 
+struct s_colors
+{
+	char	*id;
+	int		red;
+	int		green;
+	int		blue;
+};
+
 struct s_txt
 {
 	char	*id;
@@ -25,7 +33,8 @@ struct s_txt
 
 struct s_vars
 {
-	t_txt	textures[4];
+	t_txt		textures[4];
+	t_colors	colors[2];
 };
 
 #endif

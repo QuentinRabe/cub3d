@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 08:54:28 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 09:21:54 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:13:37 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static bool	follow_rgb_format(char *color)
 	return (true);
 }
 
-static void	check_rgb_format(char *content, char **contents, int *count)
+static void	check_rgb_format(char *content, char **contents)
 {
 	size_t	id_len;
 	size_t	len;
@@ -68,7 +68,6 @@ static void	check_rgb_format(char *content, char **contents, int *count)
 		return ;
 	len = ft_strlen_charset(content + id_len + 1, '\n');
 	color = ft_substr(content, id_len + 1, len);
-	printf("[%s]\n", color);
 	if (!follow_rgb_format(color))
 	{
 		free(color);
@@ -77,20 +76,25 @@ static void	check_rgb_format(char *content, char **contents, int *count)
 		exit(EXIT_FAILURE);
 	}
 	free(color);
-	(*count)++;
 }
 
 void	parse_color(char **contents)
 {
 	int	i;
 	int	count;
+	int	index;
 
 	count = 0;
 	i = -1;
 	while (contents[++i] && count < 2)
 	{
-		if (is_only(SPACES, contents[i]))
+		if (is_only(SPACES, contents[i])
+			|| ft_strlen_set(contents[i], SPACES) > 1)
 			continue ;
-		check_rgb_format(contents[i], contents, &count);
+		check_rgb_format(contents[i], contents);
+		index = ft_strlen_set(contents[i], SPACES);
+		skip(SPACES, contents[i], &index);
+		check_color_values(contents[i] + index, contents);
+		count++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:25:23 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 10:50:35 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 11:40:26 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int ac, char **argv)
 	{
 		contents = read_content(argv[1]);
 		parse(contents, &vars);
-		print_textures(vars.textures);
+		// print_textures(vars.textures);
 		free_array(contents);
 		ft_putstr_fd("No error.\n", 1);
 	}
