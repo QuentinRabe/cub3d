@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/16 14:39:11 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 09:04:24 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ bool	is_only(char *set, char *str);
 /*=============PARSE=============*/
 void	parse(char **content);
 void	parse_texture(char **contents);
+void	parse_color(char **contents);
 #endif

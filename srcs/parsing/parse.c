@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:54:06 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/16 14:39:24 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 09:04:34 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ void	parse(char **contents)
 		exit(EXIT_FAILURE);
 	}
 	parse_texture(contents);
+	parse_color(contents);
 }
