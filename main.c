@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:25:23 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/16 14:22:51 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 10:50:35 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,13 @@ void	print_map(char **map)
 int	main(int ac, char **argv)
 {
 	char	**contents;
+	t_vars	vars;
 
 	if (!has_obvious_error(argv, ac))
 	{
 		contents = read_content(argv[1]);
-		parse(contents);
+		parse(contents, &vars);
+		print_textures(vars.textures);
 		free_array(contents);
 		ft_putstr_fd("No error.\n", 1);
 	}

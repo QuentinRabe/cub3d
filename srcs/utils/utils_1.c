@@ -6,11 +6,20 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:02:34 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/16 13:37:03 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 10:46:29 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
+
+void	print_textures(t_txt t[4])
+{
+	int	i;
+
+	i = -1;
+	while (++i < 4)
+		printf("%s->%s\n", t[i].id, t[i].path);
+}
 
 bool	is_only(char *set, char *str)
 {

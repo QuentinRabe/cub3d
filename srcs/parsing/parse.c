@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:54:06 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 09:04:34 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 10:15:54 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ bool	contains_at_least(int n, char **arr)
 	return (true);
 }
 
-void	parse(char **contents)
+void	parse(char **contents, t_vars *vars)
 {
 	if (!contains_at_least(6, contents) || is_map_first(6, contents))
 	{
 		free_array(contents);
 		exit(EXIT_FAILURE);
 	}
-	parse_texture(contents);
+	parse_texture(contents, vars->textures);
 	parse_color(contents);
 }
