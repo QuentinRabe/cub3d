@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:16 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 17:31:52 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 22:12:12 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ size_t index, int *count)
 	skip(SPACES, content, (int *)&index);
 	len = ft_strlen_charset(content + index, '\n');
 	filename = ft_substr(content, index, len);
-	printf("filename: %s\n", filename);
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 	{
@@ -78,10 +77,11 @@ static void	check_valid_identifier(char *content, char **contents)
 {
 	char		*id;
 	size_t		len;
-	int			i = 0;
+	int			i;
 	static int	bits = 0;
 	static int	count = 0;
 
+	i = 0;
 	skip(SPACES, content, &i);
 	len = ft_strlen_set(content + i, SPACES);
 	id = ft_substr(content, i, len);
@@ -95,8 +95,7 @@ static void	check_valid_identifier(char *content, char **contents)
 			print_error("The file contains one or more invalid identifiers.\
  Valid identifiers are: NO, EA, SO, WE, F, C.\
  Please check them and ensure all identifiers are unique and valid.");
-			free_array(contents);
-			exit(EXIT_FAILURE);
+			return (free_array(contents), exit(EXIT_FAILURE));
 		}
 		bits = 0;
 		count = 0;
@@ -105,17 +104,6 @@ static void	check_valid_identifier(char *content, char **contents)
 
 void	parse_texture(char **contents)
 {
-	int	i;
-	int	count;
-
-	i = -1;
-	count = 0;
-	while (count < 6 && contents[++i])
-	{
-		if (is_only(SPACES, contents[i]))
-			continue ;
-		check_valid_identifier(contents[i], contents);
-		check_texture_path(contents[i], contents);
-		count++;
-	}
+	check_process(contents, check_valid_identifier);
+	check_process(contents, check_texture_path);
 }

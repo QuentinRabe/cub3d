@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 08:54:28 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 17:50:11 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 21:31:43 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ static void	check_rgb_format(char *content, char **contents)
 	skip(SPACES, content, &i);
 	len = ft_strlen_set(content + i, SPACES);
 	color = ft_substr(content, i, len);
-	printf("[%s]\n", color);
 	if (!follow_rgb_format(color))
 	{
 		free(color);
