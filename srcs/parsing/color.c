@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 08:54:28 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 15:31:04 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 17:50:11 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,14 @@ static void	check_rgb_format(char *content, char **contents)
 
 	i = 0;
 	skip(SPACES, content, &i);
-	id_len = ft_strlen_set(content + 1, SPACES);
+	id_len = ft_strlen_set(content + i, SPACES);
 	if (id_len > 1)
 		return ;
-	len = ft_strlen_charset(content + id_len + 1, '\n');
-	color = ft_substr(content, id_len + 1, len);
+	i += 1;
+	skip(SPACES, content, &i);
+	len = ft_strlen_set(content + i, SPACES);
+	color = ft_substr(content, i, len);
+	printf("[%s]\n", color);
 	if (!follow_rgb_format(color))
 	{
 		free(color);
@@ -85,23 +88,15 @@ void	parse_color(char **contents)
 {
 	int	i;
 	int	count;
-	int	index;
-	int	start;
 
 	count = 0;
 	i = -1;
-	index = -1;
 	while (contents[++i] && count < 2)
 	{
-		if (is_only(SPACES, contents[i])
-			|| ft_strlen_set(contents[i], SPACES) > 1)
+		if (is_only(SPACES, contents[i]) || is_texture(contents[i]))
 			continue ;
 		check_rgb_format(contents[i], contents);
-		skip(SPACES, contents[i], &index);
-		start = ft_strlen_set(contents[i] + index, SPACES);
-		skip(SPACES, contents[i] + index + start, &index);
-		printf("[%s]\n", contents[i] + index);
-		// check_color_values(contents[i] + index, contents);
+		check_color_values(contents[i], contents);
 		count++;
 	}
 }

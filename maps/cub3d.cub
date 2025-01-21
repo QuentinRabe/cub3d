@@ -3,9 +3,9 @@
 C 						225,25,0
 
     NO 					./main.c
-EA ./main.c
-SO ./main.c
-WE ./main.c
+			EA      ./main.c
+SO      ./main.c
+WE                        ./main.c
 
 
 

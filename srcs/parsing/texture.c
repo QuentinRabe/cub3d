@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:16 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 15:48:26 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/21 17:31:52 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ size_t index, int *count)
 	size_t	len;
 	int		fd;
 
-	
+	skip(SPACES, content, (int *)&index);
 	len = ft_strlen_charset(content + index, '\n');
 	filename = ft_substr(content, index, len);
+	printf("filename: %s\n", filename);
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 	{
@@ -47,8 +48,8 @@ static void	check_texture_path(char *content, char **contents)
 	skip(SPACES, content, &i);
 	if (count < 4)
 	{
-		index = ft_strlen_set(content + i, SPACES) + 1;
-		if (index == 2)
+		index = ft_strlen_set(content + i, SPACES);
+		if (index == 1)
 			return ;
 		skip(SPACES, content + i, &i);
 		try_to_open_file(content + i, contents, index, &count);
