@@ -6,13 +6,30 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:54:06 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/22 08:20:09 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/22 08:58:05 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
 
-bool	is_map_first(int n, char **arr)
+static bool	is_id(char *content, int *count)
+{
+	printf("[%s]\n", content);
+	if (!ft_strcmp(content, "NO")
+		|| !ft_strcmp(content, "EA")
+		|| !ft_strcmp(content, "SO")
+		|| !ft_strcmp(content, "WE")
+		|| !ft_strcmp(content, "F")
+		|| !ft_strcmp(content, "C"))
+	{
+		(*count)++;
+		free(content);
+		return (true);
+	}
+	return (false);
+}
+
+static bool	is_map_first(int n, char **arr)
 {
 	int		count;
 	int		i;
@@ -30,16 +47,18 @@ bool	is_map_first(int n, char **arr)
 		skip(SPACES, arr[i], &index);
 		len = ft_strlen_set(arr[i] + index, SPACES);
 		content = ft_substr(arr[i], index, len);
-		printf("%s\n", content);
+		if (is_id(content, &count))
+			continue ;
 		if (is_only(ELTS, content))
-			return (free(content), print_error("Map should not go first."), true);
+			return (free(content), \
+			print_error("Map should not go first."), true);
 		free(content);
 		count++;
 	}
 	return (false);
 }
 
-bool	contains_at_least(int n, char **arr)
+static bool	contains_at_least(int n, char **arr)
 {
 	int	count;
 	int	i;

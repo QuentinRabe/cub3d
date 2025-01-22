@@ -1,16 +1,9 @@
-					F							220,100,0
-
-			C 						225,25,010
-
-NO 					./main.c
-			EA      ./main.c
-							SO      ./main.c
-WE                        ./main.c
-
-
-
-
-
+F 220,100,25
+NO ./main.c
+EA ./main.c
+SO ./main.c
+WE ./main.c
+C 225,25,010
 
 
 		1111111111111111111111111
