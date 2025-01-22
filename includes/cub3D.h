@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 22:06:41 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/22 08:22:43 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define CUB3D_H
 # define SPACES "\t\n\v\f\r "
 # define NUMBERS "0123456789\n"
-# define ELTS "10P\n"
+# define ELTS "10NSWE\n"
 
 # include <stdio.h>
 # include <stdbool.h>

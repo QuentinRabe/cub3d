@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 08:54:28 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 21:31:43 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/22 08:04:23 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static void	check_rgb_format(char *content, char **contents)
 	{
 		free(color);
 		free_array(contents);
-		print_error("Color should follow this format rrr,ggg,bbb");
+		print_error("Color should follow this format [RRR],[GGG],[BBB]");
 		exit(EXIT_FAILURE);
 	}
 	free(color);

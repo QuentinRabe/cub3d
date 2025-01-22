@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:54:06 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 22:07:43 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/22 08:20:09 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,26 @@
 
 bool	is_map_first(int n, char **arr)
 {
-	int	count;
-	int	i;
+	int		count;
+	int		i;
+	int		index;
+	size_t	len;
+	char	*content;
 
 	count = 0;
 	i = -1;
+	index = 0;
 	while (count < n && arr[++i])
 	{
 		if (is_only(SPACES, arr[i]))
 			continue ;
-		if (is_only(ELTS, arr[i]))
-			return (print_error("Map should not go first."), true);
+		skip(SPACES, arr[i], &index);
+		len = ft_strlen_set(arr[i] + index, SPACES);
+		content = ft_substr(arr[i], index, len);
+		printf("%s\n", content);
+		if (is_only(ELTS, content))
+			return (free(content), print_error("Map should not go first."), true);
+		free(content);
 		count++;
 	}
 	return (false);

@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 14:25:19 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 22:14:34 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/22 08:02:48 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	store_texture(char **contents, t_txt t[4])
 		if (is_only(SPACES, contents[i]) || !is_texture(contents[i]))
 			continue ;
 		process_texture(contents[i], t, count);
-		printf("%s=%s\n", t[count].id, t[count].path);
 		count++;
 	}
 }
