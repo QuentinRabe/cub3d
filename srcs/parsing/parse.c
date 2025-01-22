@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:54:06 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/22 08:58:05 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/22 09:23:21 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static bool	is_id(char *content, int *count)
 {
-	printf("[%s]\n", content);
 	if (!ft_strcmp(content, "NO")
 		|| !ft_strcmp(content, "EA")
 		|| !ft_strcmp(content, "SO")
@@ -82,6 +81,7 @@ void	parse(char **contents, t_vars *vars)
 		return (free_array(contents), exit(EXIT_FAILURE));
 	parse_texture(contents);
 	parse_color(contents);
+	parse_map(contents);
 	store_texture(contents, vars->textures);
 	store_color(contents, vars->colors);
 }
