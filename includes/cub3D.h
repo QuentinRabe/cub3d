@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/22 09:21:46 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/23 17:38:54 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 /*=============UTILS=============*/
 void	free_array(char **arr);
 void	free_vars(t_vars *vars);
+void	print_array(char **arr);
 void	print_textures(t_txt t[4]);
 void	skip(char *set, char *str, int *index);
 /*=============ERROR_HANDLER=============*/
