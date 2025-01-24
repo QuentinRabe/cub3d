@@ -6,13 +6,13 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:02:34 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 15:02:22 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/24 09:10:50 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
 
-static int	is_in(char *set, char c)
+int	is_in(char *set, char c)
 {
 	int	i;
 

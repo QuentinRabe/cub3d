@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 09:17:34 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/23 18:19:01 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/24 08:37:43 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ void	parse_map(char **contents)
 		exit(EXIT_FAILURE);
 	}
 	map = trim_array(contents, i);
+	if (parsing_process(map))
+		return (free_array(contents), exit(EXIT_FAILURE));
 	print_array(map);
 	free_array(map);
 }
