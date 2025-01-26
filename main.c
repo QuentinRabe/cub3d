@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:25:23 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/23 17:38:42 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/26 17:15:34 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_array(char **arr)
 
 	i = -1;
 	while (arr[++i])
-		printf("%s", arr[i]);
+		printf("%s\n", arr[i]);
 }
 
 void	free_array(char **arr)

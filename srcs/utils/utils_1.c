@@ -6,11 +6,21 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:02:34 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/24 09:10:50 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/26 17:05:53 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
+
+int	count_array(char **arr)
+{
+	int	i;
+
+	i = -1;
+	while (arr[++i])
+		;
+	return (i);
+}
 
 int	is_in(char *set, char c)
 {

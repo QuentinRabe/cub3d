@@ -6,13 +6,28 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 09:17:34 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/24 08:37:43 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/26 17:55:22 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
 
-bool	there_is_map_under(char **contents, int i)
+static char	**cleaned_map(char **map)
+{
+	char	**new;
+	int		i;
+
+	new = (char **) malloc((count_array(map) + 1) * sizeof(char *));
+	if (!new)
+		return (NULL);
+	i = -1;
+	while (map[++i])
+		new[i] = trimed_line(map[i]);
+	new[i] = NULL;
+	return (new);
+}
+
+static bool	there_is_map_under(char **contents, int i)
 {
 	while (is_only(SPACES, contents[i]))
 		i++;
@@ -21,7 +36,7 @@ bool	there_is_map_under(char **contents, int i)
 	return (false);
 }
 
-int	count_trimed_map_len(char **contents, int i)
+static int	count_trimed_map_len(char **contents, int i)
 {
 	int	count;
 
@@ -61,11 +76,11 @@ static char	**trim_array(char **contents, int j)
 	return (trimed);
 }
 
-void	parse_map(char **contents)
+void	parse_map(char **contents, char ***map)
 {
 	int		i;
 	int		count;
-	char	**map;
+	char	**arr;
 
 	count = 0;
 	i = 0;
@@ -81,9 +96,9 @@ void	parse_map(char **contents)
 		print_error("File should contain map description.");
 		exit(EXIT_FAILURE);
 	}
-	map = trim_array(contents, i);
-	if (parsing_process(map))
+	arr = trim_array(contents, i);
+	if (parsing_process(arr))
 		return (free_array(contents), exit(EXIT_FAILURE));
-	print_array(map);
-	free_array(map);
+	*map = cleaned_map(arr);
+	free_array(arr);
 }
