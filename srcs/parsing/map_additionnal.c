@@ -6,11 +6,38 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 18:07:04 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/24 09:33:16 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/26 16:51:59 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
+
+static bool	has_only_one_player(char **map)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	i = -1;
+	count = 0;
+	while (map[++i])
+	{
+		j = -1;
+		while (map[i][++j])
+		{
+			if (is_in(PLAYER, map[i][j]))
+				count++;
+			if (count > 1)
+			{
+				print_error("Map should contain only one player");
+				return (false);
+			}
+		}
+	}
+	if (count == 0)
+		return (print_error("Map should contain at least one player"), false);
+	return (true);
+}
 
 static int	check_closed_process(char **map, int rw, int cl)
 {
@@ -66,7 +93,8 @@ static bool	has_forbidden_elts(char **map)
 
 int	parsing_process(char **map)
 {
-	if (has_forbidden_elts(map) || !is_map_closed(map))
+	if (has_forbidden_elts(map) || !is_map_closed(map)
+		|| !has_only_one_player(map))
 	{
 		free_array(map);
 		return (1);

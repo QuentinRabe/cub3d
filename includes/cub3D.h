@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/24 09:31:43 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/26 16:49:09 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define NUMBERS "0123456789\n"
 # define ELTS "10NSWE\t\n\v\f\r "
 # define ABS_ELTS "10NSWE"
+# define PLAYER "NSWE"
 
 # include <stdio.h>
 # include <stdbool.h>
