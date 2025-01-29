@@ -6,7 +6,7 @@
 #    By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/27 07:04:28 by arabefam          #+#    #+#              #
-#    Updated: 2025/01/27 09:32:40 by arabefam         ###   ########.fr        #
+#    Updated: 2025/01/29 19:52:41 by arabefam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,7 @@ MAX_MESSAGE_LEN := 40
 
 define compilation_progress
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@printf "$(GREEN)[Libft] Compiling sources⏳$(NC)";
-	@printf "%*s" $(MAX_MESSAGE_LEN) "";
-	@printf "\r";
+	@tput civis; printf "$(GREEN)[Libft] Compiling sources⏳$(NC)"; tput el; printf "\r"; tput cnorm;
 	@sleep 0.1
 endef
 

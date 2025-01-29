@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 12:02:34 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/26 17:05:53 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/29 19:38:38 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ int	is_in(char *set, char c)
 {
 	int	i;
 
-	i = -1;
-	while (set[++i])
+	i = 0;
+	while (set[i])
 	{
 		if (c == set[i])
 			return (1);
+		i++;
 	}
 	return (0);
 }
@@ -56,19 +57,21 @@ bool	is_only(char *set, char *str)
 	int		j;
 	size_t	count;
 
-	i = -1;
+	i = 0;
 	count = 0;
-	while (str[++i])
+	while (str[i])
 	{
-		j = -1;
-		while (set[++j])
+		j = 0;
+		while (set[j])
 		{
 			if (str[i] == set[j])
 			{
 				count++;
 				break ;
 			}
+			j++;
 		}
+		i++;
 	}
 	if (count == ft_strlen(str))
 		return (true);

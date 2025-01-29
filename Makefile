@@ -16,10 +16,7 @@ MAX_MESSAGE_LEN		:=	40
 
 define compilation_progress
 	@$(CC) $(CFLAGS) -c $< -o $@ $(LDFLAGS)
-	@printf "$(BLUE)[Cub3d] Compiling sources⏳$(NC)";
-	@printf "%*s" $(MAX_MESSAGE_LEN) "";
-	@printf "\r";
-	@sleep 0.1
+	@tput civis; printf "$(BLUE)[Cub3d] Compiling sources⏳$(NC)"; tput el; printf "\r"; tput cnorm;
 endef
 
 define clean

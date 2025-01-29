@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 18:07:04 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/26 16:51:59 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/01/29 19:43:50 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,7 @@ static bool	has_forbidden_elts(char **map)
 	i = 0;
 	while (map[i])
 	{
-		if (is_only(SPACES, map[i])
-			|| !is_only(ELTS, map[i]))
+		if (!is_only(ELTS, map[i]))
 		{
 			print_error("Map description should only contain 10[N][S][W][E].");
 			return (true);
