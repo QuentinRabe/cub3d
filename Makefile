@@ -43,7 +43,7 @@ fclean	:	clean
 		rm -f $(NAME)
 
 msh_val	:	all
-		@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
+		@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME) $(ARGS)
 re		:	fclean all
 
 .PHONY	:	all fclean clean re msh_val
