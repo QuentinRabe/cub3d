@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:16 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 22:12:12 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/07 11:52:03 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ size_t index, int *count)
 	{
 		print_error("One or more specified texture paths do not exist.\
  Please verify the paths and try again.");
-		close(fd);
 		free_array(contents);
 		free(filename);
 		exit(EXIT_FAILURE);
