@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 09:17:34 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/29 19:43:16 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/07 11:24:17 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ static int	count_trimed_map_len(char **contents, int i)
 		i++;
 	while (contents[i])
 	{
-		if (is_only(SPACES, contents[i]) && !there_is_map_under(contents, i + 1))
+		if (is_only(SPACES, contents[i]) && \
+		!there_is_map_under(contents, i + 1))
 			break ;
 		count++;
 		i++;
