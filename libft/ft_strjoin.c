@@ -6,13 +6,13 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:26:49 by arabefam          #+#    #+#             */
-/*   Updated: 2024/10/21 08:01:07 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/07 10:24:51 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	st_strcat(char const *s1, char const *s2, char	*joined)
+static void	st_strcat(char *s1, char *s2, char	*joined)
 {
 	int		i;
 	int		j;
@@ -35,7 +35,7 @@ static void	st_strcat(char const *s1, char const *s2, char	*joined)
 	joined[j] = '\0';
 }
 
-char	*ft_strjoin(char *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t	len;
 	char	*joined;
