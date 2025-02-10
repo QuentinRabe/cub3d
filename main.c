@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:25:23 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/07 10:59:09 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 09:18:53 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	main(int ac, char **argv)
 	char	**contents;
 	t_vars	vars;
 
+	print_banner();
 	if (!has_obvious_error(argv, ac))
 	{
 		contents = read_content(argv[1]);

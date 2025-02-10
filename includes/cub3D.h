@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/26 17:13:23 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 09:18:43 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,14 @@
 # include <libft.h>
 # include <get_next_line.h>
 # include <data.h>
+# include <ascii.h>
 
 /*=============UTILS=============*/
 void	free_array(char **arr);
 void	free_vars(t_vars *vars);
 void	print_array(char **arr);
 void	print_textures(t_txt t[4]);
+void	print_banner(void);
 int		is_in(char *set, char c);
 void	skip(char *set, char *str, int *index);
 int		count_array(char **arr);
