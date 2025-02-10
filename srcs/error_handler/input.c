@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 14:16:32 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/09 08:34:29 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:14:15 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ static bool	can_be_opened(char *name)
 	if (fd < 0)
 	{
 		error = ft_strjoin("No such file named ", name);
-		close(fd);
 		print_error(error);
 		free(error);
 		return (false);
 	}
 	close(fd);
+	print_success_progress("Filename existence test passed.");
 	return (true);
 }
 
@@ -37,18 +37,19 @@ static bool	has_excepted_extension(char *name)
 	int		index;
 
 	if (ft_strlen(name) <= 4)
-		return (print_error("Map has not the correct extension '.cub'"),
+		return (print_error("Map has not the correct extension '.cub'."),
 			false);
 	index = ft_strlen(name) - 4;
 	extension = ft_substr(name, index, 4);
 	if (!ft_strcmp(extension, ".cub"))
 	{
 		if ((name[index - 1] && name[index - 1] == '/'))
-			return (print_error("Map has not the correct extension '.cub'"),
+			return (print_error("Map has not the correct extension '.cub'."),
 				free(extension), false);
-		return (free(extension), true);
+		return (print_success_progress("Filename extension test passed."), \
+free(extension), true);
 	}
-	return (print_error("Map has not the correct extension '.cub'"),
+	return (print_error("Map has not the correct extension '.cub'."),
 		free(extension), false);
 }
 
@@ -62,6 +63,7 @@ static bool	has_invalid_args_number(int ac)
 			print_error("Too many arguments.");
 		return (true);
 	}
+	print_success_progress("Args number test passed.");
 	return (false);
 }
 

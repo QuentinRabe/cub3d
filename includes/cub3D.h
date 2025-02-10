@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/10 09:50:34 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:05:47 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # define PLAYER "NSWE"
 # define RED_BG "\e[41m"
 # define RED "\e[1;91m"
+# define GREEN_BG "\e[0;102m"
+# define GREEN "\e[1;92m"
 
 # include <stdio.h>
 # include <stdbool.h>
@@ -34,6 +36,7 @@ void	free_vars(t_vars *vars);
 void	print_array(char **arr);
 void	print_textures(t_txt t[4]);
 void	print_banner(void);
+void	print_success_progress(char *step);
 int		is_in(char *set, char c);
 void	skip(char *set, char *str, int *index);
 int		count_array(char **arr);
