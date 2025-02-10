@@ -6,12 +6,15 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/10 11:01:17 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 11:46:36 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
+# ifndef LOW_CPU
+#  define LOW_CPU 0
+# endif
 # define SPACES "\t\n\v\f\r "
 # define NUMBERS "0123456789\n"
 # define ELTS "10NSWE\t\n\v\f\r "
@@ -22,7 +25,7 @@
 # define RED "\e[1;91m"
 # define GREEN_BG "\e[0;102m"
 # define GREEN "\e[1;92m"
-# define ITERATIONS 1000000000
+# define ITERATIONS LOW_CPU ? 100000000 : 1000000000
 
 # include <stdio.h>
 # include <stdbool.h>
