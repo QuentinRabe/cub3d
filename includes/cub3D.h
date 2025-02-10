@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/10 10:05:47 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 11:01:17 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define RED "\e[1;91m"
 # define GREEN_BG "\e[0;102m"
 # define GREEN "\e[1;92m"
+# define ITERATIONS 1000000000
 
 # include <stdio.h>
 # include <stdbool.h>
@@ -40,6 +41,7 @@ void	print_success_progress(char *step);
 int		is_in(char *set, char c);
 void	skip(char *set, char *str, int *index);
 int		count_array(char **arr);
+void	fake_sleep(unsigned long iterations);
 /*=============ERROR_HANDLER=============*/
 void	print_error(char *error);
 size_t	file_lines(char *name);

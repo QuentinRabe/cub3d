@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 14:16:32 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/10 10:14:15 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:50:09 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static bool	can_be_opened(char *name)
 	}
 	close(fd);
 	print_success_progress("Filename existence test passed.");
+	fake_sleep(ITERATIONS);
 	return (true);
 }
 
@@ -47,7 +48,7 @@ static bool	has_excepted_extension(char *name)
 			return (print_error("Map has not the correct extension '.cub'."),
 				free(extension), false);
 		return (print_success_progress("Filename extension test passed."), \
-free(extension), true);
+free(extension), fake_sleep(ITERATIONS), true);
 	}
 	return (print_error("Map has not the correct extension '.cub'."),
 		free(extension), false);
@@ -64,6 +65,7 @@ static bool	has_invalid_args_number(int ac)
 		return (true);
 	}
 	print_success_progress("Args number test passed.");
+	fake_sleep(ITERATIONS);
 	return (false);
 }
 

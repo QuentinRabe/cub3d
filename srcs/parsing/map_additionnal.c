@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 18:07:04 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/29 19:43:50 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:57:46 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ static bool	has_only_one_player(char **map)
 	}
 	if (count == 0)
 		return (print_error("Map should contain at least one player"), false);
+	print_success_progress("One player in map test passed.");
+	fake_sleep(ITERATIONS);
 	return (true);
 }
 
@@ -70,6 +72,8 @@ static bool	is_map_closed(char **map)
 			}
 		}
 	}
+	print_success_progress("Map closed test passed.");
+	fake_sleep(ITERATIONS);
 	return (true);
 }
 
@@ -87,6 +91,8 @@ static bool	has_forbidden_elts(char **map)
 		}
 		i++;
 	}
+	print_success_progress("Map description elements test passed.");
+	fake_sleep(ITERATIONS);
 	return (false);
 }
 

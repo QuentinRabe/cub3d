@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 08:54:28 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/22 08:04:23 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:52:43 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,6 @@ void	parse_color(char **contents)
 		check_color_values(contents[i], contents);
 		count++;
 	}
+	print_success_progress("Colors test passed.");
+	fake_sleep(ITERATIONS);
 }

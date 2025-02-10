@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:54:06 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/26 17:55:08 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 11:00:27 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,14 @@ void	parse(char **contents, t_vars *vars)
 	map = NULL;
 	if (!contains_at_least(6, contents) || is_map_first(6, contents))
 		return (free_array(contents), exit(EXIT_FAILURE));
+	print_success_progress("Map description position test passed.");
+	fake_sleep(ITERATIONS);
 	parse_texture(contents);
 	parse_color(contents);
 	parse_map(contents, &map);
 	store_texture(contents, vars->textures);
 	store_color(contents, vars->colors);
-	print_array(map);
+	print_success_progress("All tests passed.");
+	fake_sleep(ITERATIONS);
 	free_array(map);
 }

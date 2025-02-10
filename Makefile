@@ -19,6 +19,7 @@ srcs/parsing/map.c\
 srcs/parsing/map_additionnal.c\
 srcs/utils/free.c\
 srcs/utils/utils_1.c\
+srcs/utils/utils_2.c\
 srcs/print/ascii.c\
 ./main.c\
 

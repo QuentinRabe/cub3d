@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 09:17:34 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/07 11:24:17 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:53:54 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ void	parse_map(char **contents, char ***map)
 		print_error("File should contain map description.");
 		exit(EXIT_FAILURE);
 	}
+	print_success_progress("There is map description.");
+	fake_sleep(ITERATIONS);
 	arr = trim_array(contents, i);
 	if (parsing_process(arr))
 		return (free_array(contents), exit(EXIT_FAILURE));

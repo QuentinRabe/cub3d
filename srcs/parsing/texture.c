@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/16 14:15:16 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/07 11:52:03 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/10 10:50:56 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,9 @@ static void	check_valid_identifier(char *content, char **contents)
 void	parse_texture(char **contents)
 {
 	check_process(contents, check_valid_identifier);
+	print_success_progress("Map identifiers test passed.");
+	fake_sleep(ITERATIONS);
 	check_process(contents, check_texture_path);
+	print_success_progress("Textures filenames test passed.");
+	fake_sleep(ITERATIONS);
 }
