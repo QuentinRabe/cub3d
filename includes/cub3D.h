@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/11 08:27:09 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/11 19:55:19 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@
 # else
 #  define ITERATIONS 0
 # endif
-# define WIDTH 1024
-# define HEIGHT 768
+# define WIDTH 960
+# define HEIGHT 540
+# define TILE 16
 
 # include <stdio.h>
 # include <stdbool.h>
@@ -43,6 +44,8 @@
 # include <mlx.h>
 # include <ascii.h>
 
+int		get_map_width(char **map);
+int		get_map_height(char **map);
 /*=============EVENTS=============*/
 int		key_hook(int key, t_vars *v);
 /*=============UTILS=============*/

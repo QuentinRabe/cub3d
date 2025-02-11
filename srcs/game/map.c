@@ -1,46 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data.h                                             :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/11 20:03:43 by arabefam         ###   ########.fr       */
+/*   Created: 2025/02/11 19:55:58 by arabefam          #+#    #+#             */
+/*   Updated: 2025/02/11 20:04:44 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_H
-# define DATA_H
+#include <cub3D.h>
 
-typedef struct s_vars	t_vars;
-typedef struct s_txt	t_txt;
-typedef struct s_colors	t_colors;
-
-struct s_colors
+void	mini_map(t_vars *v)
 {
-	char	*id;
-	int		red;
-	int		green;
-	int		blue;
-};
-
-struct s_txt
-{
-	char	*id;
-	char	*path;
-};
-
-struct s_vars
-{
-	t_txt		textures[4];
-	t_colors	colors[2];
-	char		**map;
-	void		*mlx;
-	void		*mlx_win;
-	void		*mini_img;
-	int			width;
-	int			height;
-};
-
-#endif
+	v->height = get_map_height(v->map);
+	v->width = get_map_width(v->map);
+	v->mini_img = mlx_new_image(v->mlx, v->width * TILE, v->height * TILE);
+}

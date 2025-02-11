@@ -1,46 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data.h                                             :+:      :+:    :+:   */
+/*   size.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/11 20:03:43 by arabefam         ###   ########.fr       */
+/*   Created: 2025/02/11 19:18:33 by arabefam          #+#    #+#             */
+/*   Updated: 2025/02/11 19:49:46 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_H
-# define DATA_H
+#include <cub3D.h>
 
-typedef struct s_vars	t_vars;
-typedef struct s_txt	t_txt;
-typedef struct s_colors	t_colors;
-
-struct s_colors
+int	get_map_height(char **map)
 {
-	char	*id;
-	int		red;
-	int		green;
-	int		blue;
-};
+	int	i;
+	int	count;
 
-struct s_txt
+	count = 0;
+	i = -1;
+	while (map[++i])
+		count++;
+	return (count);
+}
+
+int	get_map_width(char **map)
 {
-	char	*id;
-	char	*path;
-};
+	int	i;
+	int	max;
+	int	len;
 
-struct s_vars
-{
-	t_txt		textures[4];
-	t_colors	colors[2];
-	char		**map;
-	void		*mlx;
-	void		*mlx_win;
-	void		*mini_img;
-	int			width;
-	int			height;
-};
-
-#endif
+	max = 0;
+	i = -1;
+	while (map[++i])
+	{
+		len = ft_strlen(map[i]);
+		if (max < len)
+			max = len;
+	}
+	return (max);
+}

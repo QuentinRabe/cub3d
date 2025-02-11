@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:54:06 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/10 11:00:27 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/11 19:44:59 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,5 @@ void	parse(char **contents, t_vars *vars)
 	store_color(contents, vars->colors);
 	print_success_progress("All tests passed.");
 	fake_sleep(ITERATIONS);
-	free_array(map);
+	vars->map = map;
 }

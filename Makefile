@@ -1,6 +1,6 @@
 NAME	=	cub3D
 CC		=	gcc
-CFLAGS	=	-Wall -Werror -Wextra -I./includes -I./libft -I./minilibx-linux -g -D STAT=0
+CFLAGS	=	-Wall -Werror -Wextra -I./includes -I./libft -I./minilibx-linux -g -D STAT=1
 LDFLAGS	=	-L./libft -lft -L./minilibx-linux -lmlx -lXext -lX11 -lm -lbsd
 SRCS	=	srcs/gnl/get_next_line.c\
 srcs/gnl/get_next_line_utils.c\
@@ -22,6 +22,8 @@ srcs/utils/utils_1.c\
 srcs/utils/utils_2.c\
 srcs/print/ascii.c\
 srcs/events/event.c\
+srcs/game/size.c\
+srcs/game/map.c\
 ./main.c\
 
 O_DIR	=	objs_dir
