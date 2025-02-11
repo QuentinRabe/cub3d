@@ -1,6 +1,6 @@
 NAME	=	cub3D
 CC		=	gcc
-CFLAGS	=	-Wall -Werror -Wextra -I./includes -I./libft -I./minilibx-linux -g -D STAT=2
+CFLAGS	=	-Wall -Werror -Wextra -I./includes -I./libft -I./minilibx-linux -g -D STAT=0
 LDFLAGS	=	-L./libft -lft -L./minilibx-linux -lmlx -lXext -lX11 -lm -lbsd
 SRCS	=	srcs/gnl/get_next_line.c\
 srcs/gnl/get_next_line_utils.c\
