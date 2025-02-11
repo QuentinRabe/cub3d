@@ -1,7 +1,7 @@
 NAME	=	cub3D
 CC		=	gcc
-CFLAGS	=	-Wall -Werror -Wextra -I./includes -I./libft -g
-LDFLAGS	=	-L./libft -lft
+CFLAGS	=	-Wall -Werror -Wextra -I./includes -I./libft -I./minilibx-linux -g
+LDFLAGS	=	-L./libft -lft -L./minilibx-linux -lmlx -lXext -lX11 -lm -lbsd
 SRCS	=	srcs/gnl/get_next_line.c\
 srcs/gnl/get_next_line_utils.c\
 srcs/error_handler/input.c\
@@ -34,10 +34,12 @@ all		:	$(NAME)
 
 $(NAME)	:	$(OBJS)
 		make -C ./libft
+		make -C ./minilibx-linux
 		$(CC) $(CFLAGS)  $(SRCS) -o $(NAME) $(LDFLAGS)
 
 clean	:
 		make clean -C ./libft
+		make clean -C ./minilibx-linux
 		rm -rf $(O_DIR)
 
 fclean	:	clean

@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:25:23 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/10 09:18:53 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/11 07:46:07 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,13 @@ void	print_map(char **map)
 	}
 }
 
+void	init_game(t_vars *v)
+{
+	v->mlx = mlx_init();
+	v->mlx_wind = mlx_new_window(v->mlx, WIDTH, HEIGHT, "cub3D");
+	mlx_loop(v->mlx);
+}
+
 int	main(int ac, char **argv)
 {
 	char	**contents;
@@ -55,8 +62,8 @@ int	main(int ac, char **argv)
 		contents = read_content(argv[1]);
 		parse(contents, &vars);
 		free_array(contents);
+		init_game(&vars);
 		free_vars(&vars);
-		ft_putstr_fd("No error.\n", 1);
 	}
 	else
 		exit (1);

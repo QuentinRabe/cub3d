@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/01/21 11:32:35 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/11 07:37:15 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ struct s_vars
 {
 	t_txt		textures[4];
 	t_colors	colors[2];
+	void		*mlx;
+	void		*mlx_wind;
 };
 
 #endif

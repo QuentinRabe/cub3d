@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/10 11:46:36 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/11 07:32:19 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@
 # define GREEN_BG "\e[0;102m"
 # define GREEN "\e[1;92m"
 # define ITERATIONS LOW_CPU ? 100000000 : 1000000000
+# define WIDTH 1024
+# define HEIGHT 768
 
 # include <stdio.h>
 # include <stdbool.h>
 # include <libft.h>
 # include <get_next_line.h>
 # include <data.h>
+# include <mlx.h>
 # include <ascii.h>
 
 /*=============UTILS=============*/
