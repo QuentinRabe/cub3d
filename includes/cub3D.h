@@ -6,14 +6,14 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/11 07:32:19 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/11 08:27:09 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
-# ifndef LOW_CPU
-#  define LOW_CPU 0
+# ifndef STAT
+#  define STAT 0
 # endif
 # define SPACES "\t\n\v\f\r "
 # define NUMBERS "0123456789\n"
@@ -25,7 +25,13 @@
 # define RED "\e[1;91m"
 # define GREEN_BG "\e[0;102m"
 # define GREEN "\e[1;92m"
-# define ITERATIONS LOW_CPU ? 100000000 : 1000000000
+# if STAT == 0
+#  define ITERATIONS 1000000000
+# elif STAT == 1
+#  define ITERATIONS 100000000
+# else
+#  define ITERATIONS 0
+# endif
 # define WIDTH 1024
 # define HEIGHT 768
 
@@ -37,6 +43,8 @@
 # include <mlx.h>
 # include <ascii.h>
 
+/*=============EVENTS=============*/
+int		key_hook(int key, t_vars *v);
 /*=============UTILS=============*/
 void	free_array(char **arr);
 void	free_vars(t_vars *vars);
