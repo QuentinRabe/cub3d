@@ -1,6 +1,6 @@
 NAME	=	cub3D
 CC		=	gcc
-CFLAGS	=	-Wall -Werror -Wextra -I./includes -I./libft -g -D LOW_CPU=1
+CFLAGS	=	-Wall -Werror -Wextra -I./includes -I./libft -g
 LDFLAGS	=	-L./libft -lft
 SRCS	=	srcs/gnl/get_next_line.c\
 srcs/gnl/get_next_line_utils.c\
