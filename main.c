@@ -6,10 +6,11 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:25:23 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/11 19:55:41 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/12 09:52:36 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "data.h"
 #include <cub3D.h>
 
 void	print_array(char **arr)
@@ -48,6 +49,7 @@ void	init_game(t_vars *v)
 {
 	v->mlx = mlx_init();
 	v->mlx_win = mlx_new_window(v->mlx, WIDTH, HEIGHT, "cub3D");
+	mini_map(v);
 	mlx_key_hook(v->mlx_win, key_hook, (void *) v);
 	mlx_loop(v->mlx);
 }
@@ -56,7 +58,9 @@ int	main(int ac, char **argv)
 {
 	char	**contents;
 	t_vars	vars;
+	t_mmap	mmap;
 
+	vars.mmap = &mmap;
 	print_banner();
 	if (!has_obvious_error(argv, ac))
 	{
