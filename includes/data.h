@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/12 10:51:12 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/12 11:25:23 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 typedef struct s_vars	t_vars;
 typedef struct s_txt	t_txt;
 typedef struct s_mmap	t_mmap;
+typedef struct s_img	t_img;
 typedef struct s_colors	t_colors;
 
 struct s_colors
@@ -32,14 +33,23 @@ struct s_txt
 	char	*path;
 };
 
-struct s_mmap
+struct s_img
 {
 	void	*img;
-	void	*tile;
-	int		t_width;
-	int		t_height;
+	char	*addr;
+	int		bpp;
+	int		size_line;
+	int		endian;
 	int		width;
 	int		height;
+};
+
+struct s_mmap
+{
+	int		width;
+	int		height;
+	t_img	*i_mmap;
+	t_img	*tile;
 };
 
 struct s_vars

@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/12 10:05:51 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/12 11:17:13 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 # endif
 # define WIDTH 960
 # define HEIGHT 540
-# define TILE 8
+# define TILE 16
 
 # include <stdio.h>
 # include <stdbool.h>

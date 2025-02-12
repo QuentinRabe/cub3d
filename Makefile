@@ -23,7 +23,7 @@ srcs/utils/utils_2.c\
 srcs/print/ascii.c\
 srcs/events/event.c\
 srcs/game/size.c\
-srcs/game/map.c\
+srcs/game/minimap.c\
 ./main.c\
 
 O_DIR	=	objs_dir
