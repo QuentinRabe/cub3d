@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/12 11:25:23 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/13 12:53:54 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 typedef struct s_vars	t_vars;
 typedef struct s_txt	t_txt;
-typedef struct s_mmap	t_mmap;
 typedef struct s_img	t_img;
 typedef struct s_colors	t_colors;
 
@@ -44,14 +43,6 @@ struct s_img
 	int		height;
 };
 
-struct s_mmap
-{
-	int		width;
-	int		height;
-	t_img	*i_mmap;
-	t_img	*tile;
-};
-
 struct s_vars
 {
 	t_txt		textures[4];
@@ -59,7 +50,6 @@ struct s_vars
 	char		**map;
 	void		*mlx;
 	void		*mlx_win;
-	t_mmap		*mmap;
 };
 
 #endif

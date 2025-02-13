@@ -1,34 +1,10 @@
 NAME	=	cub3D
 CC		=	gcc
-CFLAGS	=	-Wall -Werror -Wextra -I./includes -I./libft -I./minilibx-linux -g -D STAT=1
+CFLAGS	=	-Wall -Werror -Wextra -I./includes -I./libft -I./minilibx-linux -g -D STAT=2
 LDFLAGS	=	-L./libft -lft -L./minilibx-linux -lmlx -lXext -lX11 -lm -lbsd
-SRCS	=	srcs/gnl/get_next_line.c\
-srcs/gnl/get_next_line_utils.c\
-srcs/error_handler/input.c\
-srcs/error_handler/status.c\
-srcs/error_handler/read.c\
-srcs/parsing/color.c\
-srcs/parsing/color_additionnal.c\
-srcs/parsing/store.c\
-srcs/parsing/texture.c\
-srcs/parsing/texture_additionnal.c\
-srcs/parsing/map_check.c\
-srcs/parsing/map_additionnal_1.c\
-srcs/parsing/parse.c\
-srcs/parsing/map.c\
-srcs/parsing/map_additionnal.c\
-srcs/utils/free.c\
-srcs/utils/utils_1.c\
-srcs/utils/utils_2.c\
-srcs/print/ascii.c\
-srcs/events/event.c\
-srcs/game/size.c\
-srcs/game/minimap.c\
-./main.c\
-
 O_DIR	=	objs_dir
 OBJS	=	$(addprefix $(O_DIR)/, $(SRCS:.c=.o))
-
+SRCS	=	$(shell find srcs -name "*.c") main.c
 $(O_DIR)/%.o		:	%.c
 		@mkdir -p $(dir $@)
 		$(CC) $(CFLAGS) -c $< -o $@ $(LDFLAGS)

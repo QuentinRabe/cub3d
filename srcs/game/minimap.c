@@ -6,44 +6,74 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:55:58 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/12 13:01:20 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/13 14:15:58 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
 
-void	draw_mmap(t_vars *v)
-{
-	int	i;
-
-	i = -1;
-	while (v->map[++i])
-		
+unsigned int	get_pixel_img(t_img *img, int x, int y) {
+	return (*(unsigned int *)((img->addr + (y * img->size_line) + (x * img->bpp / 8))));
 }
 
-static void	init_mmap_imgs(t_vars *v)
+void	put_pixel_img(t_img *img, int x, int y, int color)
 {
-	t_img	mmap_img;
-	t_img	tile_img;
+	char	*pixel;
 
-	v->mmap->i_mmap = &mmap_img;
-	v->mmap->height = get_map_height(v->map);
-	v->mmap->width = get_map_width(v->map);
-	v->mmap->i_mmap->img = mlx_new_image(v->mlx, v->mmap->width * TILE, \
-v->mmap->height * TILE);
-	v->mmap->i_mmap->addr = mlx_get_data_addr(v->mlx, &v->mmap->i_mmap->bpp, \
-&v->mmap->i_mmap->size_line, &v->mmap->i_mmap->endian);
-	v->mmap->tile = &tile_img;
-	v->mmap->tile->img = mlx_xpm_file_to_image(v->mlx, "./tiles/block.xpm", \
-&v->mmap->tile->width, &v->mmap->tile->height);
-	if (!v->mmap->tile->img)
-		exit(EXIT_FAILURE);
-	v->mmap->tile->addr = mlx_get_data_addr(v->mlx, &v->mmap->tile->bpp, \
-&v->mmap->tile->size_line, &v->mmap->tile->endian);
+	if (color == (int)0xFF000000)
+		return ;
+	pixel = img->addr + (y * img->size_line + x * (img->bpp / 8));
+	printf("Writing at addr=%p | x=%d, y=%d | offset=%d\n", (void *)pixel, x, y, y * img->size_line + x * (img->bpp / 8));
+	*(int *)pixel = color;
+}
+
+void	put_img_to_img(t_img *dst, t_img *src, int x, int y) {
+	int i;
+	int j;
+
+	i = 0;
+	while(i < src->width) {
+		j = 0;
+		while (j < src->height) {
+			put_pixel_img(dst, x + i, y + j, get_pixel_img(src, i, j));
+			j++;
+		}
+		i++;
+	}
 }
 
 void	mini_map(t_vars *v)
 {
-	init_mmap_imgs(v);
-	mlx_put_image_to_window(v->mlx, v->mlx_win, v->mmap->tile->img, 0, 0);
+	t_img	*mmap;
+	t_img	*tile;
+	t_img	*player;
+	int		y;
+	int		x;
+
+	mmap = (t_img *) malloc(sizeof(t_img));
+	tile = (t_img *) malloc(sizeof(t_img));
+	player = (t_img *) malloc(sizeof(t_img));
+	mmap->width = get_map_width(v->map) * TILE;
+	mmap->height = get_map_height(v->map) * TILE;
+	mmap->img = mlx_new_image(v->mlx, mmap->width, mmap->height);
+	mmap->addr = mlx_get_data_addr(mmap->img, &mmap->bpp, &mmap->size_line, &mmap->endian);
+	tile->img = mlx_xpm_file_to_image(v->mlx, "./tiles/block.xpm", &tile->width, &tile->height);
+	tile->addr = mlx_get_data_addr(tile->img, &tile->bpp, &tile->size_line, &tile->endian);
+	player->img = mlx_xpm_file_to_image(v->mlx, "./tiles/player.xpm", &player->width, &player->height);
+	player->addr = mlx_get_data_addr(player->img, &player->bpp, &player->size_line, &player->endian);
+	y = 0;
+	while (v->map[y])
+	{
+		x = 0;
+		while (v->map[y][x])
+		{
+			if (v->map[y][x] == '1')
+				put_img_to_img(mmap, tile, x * TILE, y * TILE);
+			if (is_in(PLAYER, v->map[y][x]))
+				put_img_to_img(mmap, player, x * TILE, y * TILE);
+			x++;
+		}
+		y++;
+	}
+	mlx_put_image_to_window(v->mlx, v->mlx_win, mmap->img, 0, 0);
 }
