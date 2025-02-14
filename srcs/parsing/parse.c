@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:54:06 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/11 19:44:59 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 07:46:35 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,5 @@ void	parse(char **contents, t_vars *vars)
 	print_success_progress("All tests passed.");
 	fake_sleep(ITERATIONS);
 	vars->map = map;
+	vars->mmap_size = MMAP_SIZE;
 }

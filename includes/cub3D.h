@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/12 11:17:13 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 07:43:11 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 # define WIDTH 960
 # define HEIGHT 540
 # define TILE 16
+# define MMAP_SIZE 200
 
 # include <stdio.h>
 # include <stdbool.h>
@@ -82,4 +83,12 @@ int		check_right(char **map, int rw, int cl);
 int		check_down(char **map, int rw, int cl);
 int		check_up(char **map, int rw, int cl);
 char	*trimed_line(char *line);
+/*=============GETTETS_SETTERS=============*/
+t_vars	*vars_addr(t_opt option, t_vars *addr);
+/*=============SAFE_FUNCTIONS=============*/
+void	safe_xpm_file_to_img(t_vars *v, t_img *new_img, char *filename);
+void	safe_get_data_addr(t_img *new_img);
+void	safe_new_img(t_vars *v, t_img *new_img, int width, int height);
+/*=============IMAGE=============*/
+t_img	*new_img(char *filename, int *width, int *height);
 #endif
