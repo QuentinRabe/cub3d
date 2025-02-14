@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:25:23 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 15:29:13 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 20:31:03 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,9 @@ void	init_game(t_vars *v)
 	v->mlx = mlx_init();
 	v->mlx_win = mlx_new_window(v->mlx, WIDTH, HEIGHT, "cub3D");
 	mini_map(v);
-	mlx_key_hook(v->mlx_win, key_hook, (void *) v);
+	mlx_hook(v->mlx_win, 2, 1L << 0, key_press, v);
+	mlx_hook(v->mlx_win, 3, 1L << 1, key_release, v);
+	mlx_loop_hook(v->mlx, game_loop, v);
 	mlx_loop(v->mlx);
 }
 

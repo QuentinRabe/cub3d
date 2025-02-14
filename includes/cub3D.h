@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 15:02:21 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 20:49:50 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@
 # define HEIGHT 540
 # define TILE 16
 # define MMAP_SIZE 200
-# define MOVE_SPEED 2.0
+# define MOVE_SPEED 0.1
+#define KEY_W 119
+#define KEY_A 97
+#define KEY_S 115
+#define KEY_D 100
 
 # include <stdio.h>
 # include <stdbool.h>
@@ -46,12 +50,16 @@
 # include <mlx.h>
 # include <ascii.h>
 # include <math.h>
+# include <X11/keysym.h>
 
 void	mini_map(t_vars *v);
 int		get_map_width(char **map);
 int		get_map_height(char **map);
 /*=============EVENTS=============*/
 int		key_hook(int key, t_vars *v);
+int		key_press(int key, t_vars *v);
+int		key_release(int key, t_vars *v);
+int		game_loop(t_vars *v);
 /*=============UTILS=============*/
 void	free_array(char **arr);
 void	free_vars(t_vars *vars);
@@ -105,4 +113,7 @@ void	put_img_to_img(t_img *dst, t_img *src, int x, int y);
 void	init_images(t_vars *v, t_img **m, t_img **t, t_img **p);
 /*=============PLAYER_MOVE=============*/
 void	move_forward(t_vars *v, t_img *m, t_img *t, t_img *p);
+void	move_backward(t_vars *v, t_img *m, t_img *t, t_img *p);
+void	move_left(t_vars *v, t_img *m, t_img *t, t_img *p);
+void	move_right(t_vars *v, t_img *m, t_img *t, t_img *p);
 #endif

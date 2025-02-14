@@ -6,11 +6,19 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:55:58 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 14:55:56 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 20:09:25 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
+
+static void	init_key_pressed(t_vars *v)
+{
+	v->pressed_a = false;
+	v->pressed_d = false;
+	v->pressed_s = false;
+	v->pressed_w = false;
+}
 
 void	init_images(t_vars *v, t_img **m, t_img **t, t_img **p)
 {
@@ -72,6 +80,7 @@ void	mini_map(t_vars *v)
 	mmap = NULL;
 	tile = NULL;
 	player = NULL;
+	init_key_pressed(v);
 	init_images(v, &mmap, &tile, &player);
 	find_player_position(v);
 	find_player_orientation(v);

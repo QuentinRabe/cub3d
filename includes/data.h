@@ -6,13 +6,14 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 14:14:07 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 20:04:25 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DATA_H
 # define DATA_H
 
+# include <stdbool.h>
 typedef struct s_vars	t_vars;
 typedef struct s_txt	t_txt;
 typedef struct s_img	t_img;
@@ -62,6 +63,10 @@ struct s_vars
 	double		player_x;
 	double		player_y;
 	double		angle;
+	bool		pressed_w;
+	bool		pressed_s;
+	bool		pressed_a;
+	bool		pressed_d;
 };
 
 #endif
