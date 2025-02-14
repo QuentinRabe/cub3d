@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:55:58 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 08:37:29 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 09:51:53 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,12 @@ void	mini_map(t_vars *v)
 	t_img	*mmap;
 	t_img	*tile;
 	t_img	*player;
+	int		mmap_w;
+	int		mmap_h;
 
-	mmap = new_img(NULL, &v->mmap_size, &v->mmap_size);
+	mmap_w = get_map_width(v->map) * TILE;
+	mmap_h = get_map_height(v->map) * TILE;
+	mmap = new_img(NULL,&mmap_w, &mmap_h);
 	tile = new_img("./tiles/block.xpm", NULL, NULL);
 	player = new_img("./tiles/player.xpm", NULL, NULL);
 	find_player_position(v);
