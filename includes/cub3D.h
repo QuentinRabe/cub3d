@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 10:00:28 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 14:21:49 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # define HEIGHT 540
 # define TILE 16
 # define MMAP_SIZE 200
+# define MOVE_SPEED 2.0
 
 # include <stdio.h>
 # include <stdbool.h>
@@ -44,6 +45,7 @@
 # include <data.h>
 # include <mlx.h>
 # include <ascii.h>
+# include <math.h>
 
 void	mini_map(t_vars *v);
 int		get_map_width(char **map);
