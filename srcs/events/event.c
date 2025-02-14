@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 08:05:40 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 15:04:53 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 15:12:09 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	key_hook(int key, t_vars *v)
 	if (key == 65307)
 	{
 		free_vars(v);
+		destroy_mmap_img(v, m, t, p);
 		mlx_destroy_window(v->mlx, v->mlx_win);
 		mlx_destroy_display(v->mlx);
 		free_array(v->map);
