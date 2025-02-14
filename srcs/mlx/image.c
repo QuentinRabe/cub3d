@@ -6,13 +6,13 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 07:12:50 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 07:42:23 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 08:05:31 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
 
-void	new_img_process(t_img *new, int width, int height)
+static void	new_img_process(t_img *new, int width, int height)
 {
 	t_vars	*v;
 
@@ -21,7 +21,7 @@ void	new_img_process(t_img *new, int width, int height)
 	safe_get_data_addr(new);
 }
 
-void	new_xpm_img_process(char *filename, t_img *new)
+static void	new_xpm_img_process(char *filename, t_img *new)
 {
 	t_vars	*v;
 

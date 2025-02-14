@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 07:46:27 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 08:16:23 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ struct s_vars
 	void		*mlx;
 	void		*mlx_win;
 	int			mmap_size;
+	int			player_x;
+	int			player_y;
 };
 
 #endif

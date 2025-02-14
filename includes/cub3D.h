@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 07:43:11 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 08:12:27 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,9 @@ int		check_up(char **map, int rw, int cl);
 char	*trimed_line(char *line);
 /*=============GETTETS_SETTERS=============*/
 t_vars	*vars_addr(t_opt option, t_vars *addr);
+t_img	*player_addr(t_opt option, t_img *addr);
+t_img	*tile_addr(t_opt option, t_img *addr);
+t_img	*mmap_addr(t_opt option, t_img *addr);
 /*=============SAFE_FUNCTIONS=============*/
 void	safe_xpm_file_to_img(t_vars *v, t_img *new_img, char *filename);
 void	safe_get_data_addr(t_img *new_img);
