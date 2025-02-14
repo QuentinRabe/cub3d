@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 14:21:49 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 15:02:21 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,15 @@ t_img	*mmap_addr(t_opt option, t_img *addr);
 void	safe_xpm_file_to_img(t_vars *v, t_img *new_img, char *filename);
 void	safe_get_data_addr(t_img *new_img);
 void	safe_new_img(t_vars *v, t_img *new_img, int width, int height);
+void	safe_destroy_img(t_vars *v, t_img *img_to_delete);
 /*=============IMAGE=============*/
 t_img	*new_img(char *filename, int *width, int *height);
 /*=============RENDER_MMAP=============*/
 void	render_mmap(t_vars *v, t_img *m, t_img *t, t_img *p);
+void	destroy_mmap_img(t_vars *v, t_img *m, t_img *t, t_img *p);
 /*=============CPY_IMG=============*/
 void	put_img_to_img(t_img *dst, t_img *src, int x, int y);
+void	init_images(t_vars *v, t_img **m, t_img **t, t_img **p);
+/*=============PLAYER_MOVE=============*/
+void	move_forward(t_vars *v, t_img *m, t_img *t, t_img *p);
 #endif
