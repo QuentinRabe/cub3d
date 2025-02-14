@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:55:58 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 08:21:11 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 08:37:29 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ void	mini_map(t_vars *v)
 	mmap_addr(SET, mmap);
 	tile_addr(SET, tile);
 	player_addr(SET, player);
+	render_mmap(v, mmap, tile, player);
 }

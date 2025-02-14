@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 08:12:27 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/14 09:15:10 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,8 @@ void	safe_get_data_addr(t_img *new_img);
 void	safe_new_img(t_vars *v, t_img *new_img, int width, int height);
 /*=============IMAGE=============*/
 t_img	*new_img(char *filename, int *width, int *height);
+/*=============RENDER_MMAP=============*/
+void	render_mmap(t_vars *v, t_img *m, t_img *t, t_img *p);
+/*=============CPY_IMG=============*/
+void	put_img_to_img(t_img *dst, t_img *src, int x, int y);
 #endif
