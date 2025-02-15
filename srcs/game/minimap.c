@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:55:58 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 20:09:25 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:19:52 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,23 @@ static void	init_key_pressed(t_vars *v)
 	v->pressed_w = false;
 }
 
-void	init_images(t_vars *v, t_img **m, t_img **t, t_img **p)
+void	init_images(t_img **m, t_img **t, t_img **p, t_img **f)
 {
-	int	mmap_w;
-	int	mmap_h;
+	int		mmap_w;
+	int		mmap_h;
+	t_vars	*v;
 
+	v = vars_addr(GET, NULL);
 	mmap_w = get_map_width(v->map) * TILE;
 	mmap_h = get_map_height(v->map) * TILE;
 	*m = new_img(NULL,&mmap_w, &mmap_h);
-	*t = new_img("./tiles/block.xpm", NULL, NULL);
+	*t = new_img("./tiles/crate.xpm", NULL, NULL);
 	*p = new_img("./tiles/player.xpm", NULL, NULL);
+	*f = new_img("./tiles/floor.xpm", NULL, NULL);
 	mmap_addr(SET, *m);
 	tile_addr(SET, *t);
 	player_addr(SET,*p);
+	floor_addr(SET, *f);
 }
 
 static void	find_player_orientation(t_vars *v)
@@ -76,13 +80,15 @@ void	mini_map(t_vars *v)
 	t_img	*mmap;
 	t_img	*tile;
 	t_img	*player;
+	t_img	*floor;
 
 	mmap = NULL;
 	tile = NULL;
 	player = NULL;
+	floor = NULL;
 	init_key_pressed(v);
-	init_images(v, &mmap, &tile, &player);
+	init_images(&mmap, &tile, &player, &floor);
 	find_player_position(v);
 	find_player_orientation(v);
-	render_mmap(v, mmap, tile, player);
+	render_mmap(mmap, tile, player, floor);
 }

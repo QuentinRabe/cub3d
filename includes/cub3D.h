@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 10:14:29 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:14:15 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@
 # endif
 # define WIDTH 960
 # define HEIGHT 540
-# define TILE 16
+# define TILE 32
 # define MMAP_SIZE 200
-# define MOVE_SPEED 0.1
+# define MOVE_SPEED 1.0
 #define KEY_W 119
 #define KEY_A 97
 #define KEY_S 115
@@ -98,6 +98,7 @@ t_vars	*vars_addr(t_opt option, t_vars *addr);
 t_img	*player_addr(t_opt option, t_img *addr);
 t_img	*tile_addr(t_opt option, t_img *addr);
 t_img	*mmap_addr(t_opt option, t_img *addr);
+t_img	*floor_addr(t_opt option, t_img *addr);
 /*=============SAFE_FUNCTIONS=============*/
 void	safe_xpm_file_to_img(t_vars *v, t_img *new_img, char *filename);
 void	safe_get_data_addr(t_img *new_img);
@@ -106,15 +107,15 @@ void	safe_destroy_img(t_vars *v, t_img **img_to_delete);
 /*=============IMAGE=============*/
 t_img	*new_img(char *filename, int *width, int *height);
 /*=============RENDER_MMAP=============*/
-void	render_mmap(t_vars *v, t_img *m, t_img *t, t_img *p);
-void	destroy_mmap_img(t_vars *v, t_img **m, t_img **t, t_img **p);
+void	render_mmap(t_img *m, t_img *t, t_img *p, t_img *f);
+void	destroy_mmap_img(t_img **m, t_img **t, t_img **p, t_img **f);
 /*=============CPY_IMG=============*/
 void	put_img_to_img(t_img *dst, t_img *src, int x, int y);
-void	init_images(t_vars *v, t_img **m, t_img **t, t_img **p);
+void	init_images(t_img **m, t_img **t, t_img **p, t_img **f);
 /*=============PLAYER_MOVE=============*/
-void	move_forward(t_vars *v, t_img **m, t_img **t, t_img **p);
-void	move_backward(t_vars *v, t_img **m, t_img **t, t_img **p);
-void	move_left(t_vars *v, t_img **m, t_img **t, t_img **p);
-void	move_right(t_vars *v, t_img **m, t_img **t, t_img **p);
+void	move_forward(t_img **m, t_img **t, t_img **p, t_img **f);
+void	move_backward(t_img **m, t_img **t, t_img **p, t_img **f);
+void	move_left(t_img **m, t_img **t, t_img **p, t_img **f);
+void	move_right(t_img **m, t_img **t, t_img **p, t_img **f);
 int		check_wall(t_vars *v, double new_x, double new_y);
 #endif

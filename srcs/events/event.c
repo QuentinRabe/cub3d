@@ -17,18 +17,20 @@ int	game_loop(t_vars *v)
 	t_img	*m;
 	t_img	*t;
 	t_img	*p;
+	t_img	*f;
 
 	m = mmap_addr(GET, NULL);
 	t = tile_addr(GET, NULL);
 	p = player_addr(GET, NULL);
+	f = floor_addr(GET, NULL);
 	if (v->pressed_w)
-		move_forward(v, &m, &t, &p);
-	if (v->pressed_a)
-		move_left(v, &m, &t, &p);
-	if (v->pressed_s)
-		move_backward(v, &m, &t, &p);
-	if (v->pressed_d)
-		move_right(v, &m, &t, &p);
+		move_forward(&m, &t, &p, &f);
+	// if (v->pressed_a)
+	// 	move_left(v, &m, &t, &p);
+	// if (v->pressed_s)
+	// 	move_backward(v, &m, &t, &p);
+	// if (v->pressed_d)
+	// 	move_right(v, &m, &t, &p);
 	return (0);
 }
 
@@ -63,14 +65,16 @@ int	key_hook(int key, t_vars *v)
 	t_img	*m;
 	t_img	*t;
 	t_img	*p;
+	t_img	*f;
 
 	m = mmap_addr(GET, NULL);
 	t = tile_addr(GET, NULL);
 	p = player_addr(GET, NULL);
+	f = floor_addr(GET, NULL);
 	if (key == 65307)
 	{
 		free_vars(v);
-		destroy_mmap_img(v, &m, &t, &p);
+		destroy_mmap_img(&m, &t, &p, &f);
 		mlx_destroy_window(v->mlx, v->mlx_win);
 		mlx_destroy_display(v->mlx);
 		free_array(v->map);
