@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 15:46:56 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/15 16:27:11 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define RED "\e[1;91m"
 # define GREEN_BG "\e[0;102m"
 # define GREEN "\e[1;92m"
+# define HITBOX_OFFSET 4
 # if STAT == 0
 #  define ITERATIONS 1000000000
 # elif STAT == 1
