@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:29:54 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 15:49:48 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/15 16:54:18 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ int	game_loop(t_vars *v)
 		move_backward(&m, &t, &p, &f);
 	if (v->pressed_d)
 		move_right(&m, &t, &p, &f);
+	if (v->pressed_left)
+		rotate_left(v);
+	if (v->pressed_right)
+		rotate_right(v);
 	if (v->pressed_escape)
 		end_game(v);
 	return (0);
@@ -48,6 +52,10 @@ int	key_release(int key, t_vars *v)
 		v->pressed_s = false;
 	if (key == XK_Escape)
 		v->pressed_escape = false;
+	if (key == XK_Left)
+		v->pressed_left = false;
+	if (key == XK_Right)
+		v->pressed_right = false;
 	return (0);
 }
 
@@ -63,6 +71,10 @@ int	key_press(int key, t_vars *v)
 		v->pressed_s = true;
 	if (key == XK_Escape)
 		v->pressed_escape = true;
+	if (key == XK_Left)
+		v->pressed_left = true;
+	if (key == XK_Right)
+		v->pressed_right = true;
 	return (0);
 }
 

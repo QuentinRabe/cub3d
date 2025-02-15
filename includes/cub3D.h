@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 16:27:11 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/15 17:07:38 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define GREEN_BG "\e[0;102m"
 # define GREEN "\e[1;92m"
 # define HITBOX_OFFSET 4
+# define ROTATE_ANGLE 1.0
 # if STAT == 0
 #  define ITERATIONS 1000000000
 # elif STAT == 1
@@ -36,8 +37,8 @@
 # define WIDTH 960
 # define HEIGHT 540
 # define TILE 32
+# define MOVE_SPEED 2.0
 # define MMAP_SIZE 200
-# define MOVE_SPEED 1.0
 #define KEY_W 119
 #define KEY_A 97
 #define KEY_S 115
@@ -118,5 +119,7 @@ void	move_forward(t_img **m, t_img **t, t_img **p, t_img **f);
 void	move_backward(t_img **m, t_img **t, t_img **p, t_img **f);
 void	move_left(t_img **m, t_img **t, t_img **p, t_img **f);
 void	move_right(t_img **m, t_img **t, t_img **p, t_img **f);
+void	rotate_right(t_vars *v);
+void	rotate_left(t_vars *v);
 int		check_wall(t_vars *v, double new_x, double new_y);
 #endif

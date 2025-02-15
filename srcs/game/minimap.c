@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:55:58 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 15:45:30 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/15 16:46:14 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static void	init_key_pressed(t_vars *v)
 	v->pressed_s = false;
 	v->pressed_w = false;
 	v->pressed_escape = false;
+	v->pressed_left = false;
+	v->pressed_right = false;
 }
 
 void	init_images(t_img **m, t_img **t, t_img **p, t_img **f)

@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 15:45:14 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/15 16:45:43 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ struct s_vars
 	bool		pressed_a;
 	bool		pressed_d;
 	bool		pressed_escape;
+	bool		pressed_left;
+	bool		pressed_right;
 };
 
 #endif
