@@ -25,12 +25,12 @@ int	game_loop(t_vars *v)
 	f = floor_addr(GET, NULL);
 	if (v->pressed_w)
 		move_forward(&m, &t, &p, &f);
-	// if (v->pressed_a)
-	// 	move_left(v, &m, &t, &p);
-	// if (v->pressed_s)
-	// 	move_backward(v, &m, &t, &p);
-	// if (v->pressed_d)
-	// 	move_right(v, &m, &t, &p);
+	if (v->pressed_a)
+		move_left(&m, &t, &p, &f);
+	if (v->pressed_s)
+		move_backward(&m, &t, &p, &f);
+	if (v->pressed_d)
+		move_right(&m, &t, &p, &f);
 	return (0);
 }
 
