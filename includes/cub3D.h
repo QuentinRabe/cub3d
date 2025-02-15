@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 15:14:15 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/15 15:46:56 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	mini_map(t_vars *v);
 int		get_map_width(char **map);
 int		get_map_height(char **map);
 /*=============EVENTS=============*/
-int		key_hook(int key, t_vars *v);
+int		end_game(t_vars *v);
 int		key_press(int key, t_vars *v);
 int		key_release(int key, t_vars *v);
 int		game_loop(t_vars *v);
