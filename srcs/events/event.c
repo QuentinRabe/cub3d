@@ -22,13 +22,13 @@ int	game_loop(t_vars *v)
 	t = tile_addr(GET, NULL);
 	p = player_addr(GET, NULL);
 	if (v->pressed_w)
-		move_forward(v, m, t, p);
+		move_forward(v, &m, &t, &p);
 	if (v->pressed_a)
-		move_left(v, m, t, p);
+		move_left(v, &m, &t, &p);
 	if (v->pressed_s)
-		move_backward(v, m, t, p);
+		move_backward(v, &m, &t, &p);
 	if (v->pressed_d)
-		move_right(v, m, t, p);
+		move_right(v, &m, &t, &p);
 	return (0);
 }
 
@@ -70,7 +70,7 @@ int	key_hook(int key, t_vars *v)
 	if (key == 65307)
 	{
 		free_vars(v);
-		destroy_mmap_img(v, m, t, p);
+		destroy_mmap_img(v, &m, &t, &p);
 		mlx_destroy_window(v->mlx, v->mlx_win);
 		mlx_destroy_display(v->mlx);
 		free_array(v->map);

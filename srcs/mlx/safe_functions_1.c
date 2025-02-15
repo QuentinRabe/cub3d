@@ -6,18 +6,19 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:39:25 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 15:13:00 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/15 09:33:55 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
 
-void	safe_destroy_img(t_vars *v, t_img *img_to_delete)
+void	safe_destroy_img(t_vars *v, t_img **img_to_delete)
 {
-	if (img_to_delete->img)
+	if (img_to_delete && (*img_to_delete)->img)
 	{
-		mlx_destroy_image(v->mlx, img_to_delete->img);
-		free(img_to_delete);
+		mlx_destroy_image(v->mlx, (*img_to_delete)->img);
+		free(*img_to_delete);
+		*img_to_delete = NULL;
 	}
 	else
 		print_error("Something goes wrong while destroying image");
