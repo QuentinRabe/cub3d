@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 17:07:38 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/19 07:06:44 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 # define WIDTH 960
 # define HEIGHT 540
 # define TILE 32
-# define MOVE_SPEED 2.0
+# define MOVE_SPEED 0.15
 # define MMAP_SIZE 200
 #define KEY_W 119
 #define KEY_A 97
