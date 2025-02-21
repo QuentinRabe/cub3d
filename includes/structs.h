@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/21 15:16:28 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 15:28:38 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ struct s_imgs
 	t_img	*tile;
 	t_img	*floor;
 	t_img	*player;
+	t_img	*rl_mmap;
 };
 
 struct s_img

@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 07:27:25 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 08:02:56 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 15:41:01 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	safe_new_img(t_vars *v, t_img *new, int width, int height)
 {
 	new->img = mlx_new_image(v->mlx, width, height);
+	new->width = width;
+	new->height = height;
 	if (!new->img)
 		exit(EXIT_FAILURE);
 }

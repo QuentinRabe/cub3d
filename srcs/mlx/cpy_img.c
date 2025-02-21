@@ -6,19 +6,19 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 07:55:17 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 15:20:26 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 18:35:55 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
 
-static unsigned int	get_pixel_img(t_img *img, int x, int y)
+unsigned int	get_pixel_img(t_img *img, int x, int y)
 {
 	return (*(unsigned int *)(img->addr + (y * img->size_line) + (x * \
 img->bpp / 8)));
 }
 
-static void	put_pixel_img(t_img *img, int x, int y, int color)
+void	put_pixel_img(t_img *img, int x, int y, int color)
 {
 	char	*pixel;
 

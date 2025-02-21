@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/21 15:07:35 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/21 15:15:59 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 18:36:06 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	destroy_mmap_img(void);
 /*=============CPY_IMG=============*/
 void	put_img_to_img(t_img *dst, t_img *src, int x, int y);
 void	init_images(void);
+void	put_pixel_img(t_img *img, int x, int y, int color);
+unsigned int	get_pixel_img(t_img *img, int x, int y);
 /*=============PLAYER_MOVE=============*/
 void	move_forward(void);
 void	move_backward(void);

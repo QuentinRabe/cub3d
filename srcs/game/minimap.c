@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:55:58 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/21 15:24:55 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 15:54:37 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,17 @@ void	init_images(void)
 	int		mmap_w;
 	int		mmap_h;
 	t_vars	*v;
+	int		size;
 
 	v = vars_addr(GET, NULL);
+	size = MMAP_SIZE;
 	mmap_w = get_map_width(v->map) * TILE;
 	mmap_h = get_map_height(v->map) * TILE;
 	v->imgs->mmap = new_img(NULL, &mmap_w, &mmap_h);
 	v->imgs->tile = new_img("./tiles/crate.xpm", NULL, NULL);
 	v->imgs->player = new_img("./tiles/player.xpm", NULL, NULL);
 	v->imgs->floor = new_img("./tiles/floor.xpm", NULL, NULL);
-	mmap_addr(SET, v->imgs->mmap);
-	tile_addr(SET, v->imgs->tile);
-	player_addr(SET, v->imgs->player);
-	floor_addr(SET, v->imgs->floor);
+	v->imgs->rl_mmap = new_img(NULL, &size, &size);
 }
 
 static void	find_player_orientation(t_vars *v)
@@ -84,9 +83,10 @@ void	mini_map(t_vars *v)
 	v->imgs->tile = NULL;
 	v->imgs->player = NULL;
 	v->imgs->floor = NULL;
+	v->imgs->rl_mmap = NULL;
 	init_key_pressed(v);
-	init_images();
 	find_player_position(v);
+	init_images();
 	find_player_orientation(v);
 	render_mmap();
 }

@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:36:59 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/21 12:06:55 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 15:35:58 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ void	destroy_mmap_img(void)
 	safe_destroy_img(v, &v->imgs->tile);
 	safe_destroy_img(v, &v->imgs->player);
 	safe_destroy_img(v, &v->imgs->floor);
+	safe_destroy_img(v, &v->imgs->rl_mmap);
 }
