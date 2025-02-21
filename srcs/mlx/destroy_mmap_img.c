@@ -6,19 +6,19 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:36:59 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 15:08:30 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:06:55 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
 
-void	destroy_mmap_img(t_img **m, t_img **t, t_img **p, t_img **f)
+void	destroy_mmap_img(void)
 {
 	t_vars	*v;
 
 	v = vars_addr(GET, NULL);
-	safe_destroy_img(v, m);
-	safe_destroy_img(v, t);
-	safe_destroy_img(v, p);
-	safe_destroy_img(v, f);
+	safe_destroy_img(v, &v->imgs->mmap);
+	safe_destroy_img(v, &v->imgs->tile);
+	safe_destroy_img(v, &v->imgs->player);
+	safe_destroy_img(v, &v->imgs->floor);
 }

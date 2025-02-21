@@ -6,13 +6,13 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:33:08 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/19 07:06:31 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 11:48:51 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cub3D.h>
 
-void	move_forward(t_img **m, t_img **t, t_img **p, t_img **f)
+void	move_forward(void)
 {
 	t_vars	*v;
 	double	new_x;
@@ -23,14 +23,14 @@ void	move_forward(t_img **m, t_img **t, t_img **p, t_img **f)
 	new_y = v->player_y + sin(v->angle) * MOVE_SPEED;
 	if (check_wall(v, new_x, new_y))
 		return ;
-	destroy_mmap_img(m, t, p, f);
-	init_images(m, t, p, f);
+	destroy_mmap_img();
+	init_images();
 	v->player_x += cos(v->angle) * MOVE_SPEED;
 	v->player_y += sin(v->angle) * MOVE_SPEED;
-	render_mmap(*m, *t, *p, *f);
+	render_mmap();
 }
 
-void	move_backward(t_img **m, t_img **t, t_img **p, t_img **f)
+void	move_backward(void)
 {
 	t_vars	*v;
 	double	new_x;
@@ -41,14 +41,14 @@ void	move_backward(t_img **m, t_img **t, t_img **p, t_img **f)
 	new_y = v->player_y - sin(v->angle) * MOVE_SPEED;
 	if (check_wall(v, new_x, new_y))
 		return ;
-	destroy_mmap_img(m, t, p, f);
-	init_images(m, t, p, f);
+	destroy_mmap_img();
+	init_images();
 	v->player_x -= cos(v->angle) * MOVE_SPEED;
 	v->player_y -= sin(v->angle) * MOVE_SPEED;
-	render_mmap(*m, *t, *p, *f);
+	render_mmap();
 }
 
-void	move_left(t_img **m, t_img **t, t_img **p, t_img **f)
+void	move_left(void)
 {
 	t_vars	*v;
 	double	new_x;
@@ -59,14 +59,14 @@ void	move_left(t_img **m, t_img **t, t_img **p, t_img **f)
 	new_y = v->player_y - sin(v->angle + (M_PI / 2)) * MOVE_SPEED;
 	if (check_wall(v, new_x, new_y))
 		return ;
-	destroy_mmap_img(m, t, p, f);
-	init_images(m, t, p, f);
+	destroy_mmap_img();
+	init_images();
 	v->player_x -= cos(v->angle + (M_PI / 2)) * MOVE_SPEED;
 	v->player_y -= sin(v->angle + (M_PI / 2)) * MOVE_SPEED;
-	render_mmap(*m, *t, *p, *f);
+	render_mmap();
 }
 
-void	move_right(t_img **m, t_img **t, t_img **p, t_img **f)
+void	move_right(void)
 {
 	t_vars	*v;
 	double	new_x;
@@ -77,9 +77,9 @@ void	move_right(t_img **m, t_img **t, t_img **p, t_img **f)
 	new_y = v->player_y + sin(v->angle + (M_PI / 2)) * MOVE_SPEED;
 	if (check_wall(v, new_x, new_y))
 		return ;
-	destroy_mmap_img(m, t, p, f);
-	init_images(m, t, p, f);
+	destroy_mmap_img();
+	init_images();
 	v->player_x += cos(v->angle + (M_PI / 2)) * MOVE_SPEED;
 	v->player_y += sin(v->angle + (M_PI / 2)) * MOVE_SPEED;
-	render_mmap(*m, *t, *p, *f);
+	render_mmap();
 }

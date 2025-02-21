@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:26:07 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/19 07:06:44 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 12:06:38 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,16 +109,16 @@ void	safe_destroy_img(t_vars *v, t_img **img_to_delete);
 /*=============IMAGE=============*/
 t_img	*new_img(char *filename, int *width, int *height);
 /*=============RENDER_MMAP=============*/
-void	render_mmap(t_img *m, t_img *t, t_img *p, t_img *f);
-void	destroy_mmap_img(t_img **m, t_img **t, t_img **p, t_img **f);
+void	render_mmap(void);
+void	destroy_mmap_img(void);
 /*=============CPY_IMG=============*/
 void	put_img_to_img(t_img *dst, t_img *src, int x, int y);
-void	init_images(t_img **m, t_img **t, t_img **p, t_img **f);
+void	init_images(void);
 /*=============PLAYER_MOVE=============*/
-void	move_forward(t_img **m, t_img **t, t_img **p, t_img **f);
-void	move_backward(t_img **m, t_img **t, t_img **p, t_img **f);
-void	move_left(t_img **m, t_img **t, t_img **p, t_img **f);
-void	move_right(t_img **m, t_img **t, t_img **p, t_img **f);
+void	move_forward(void);
+void	move_backward(void);
+void	move_left(void);
+void	move_right(void);
 void	rotate_right(t_vars *v);
 void	rotate_left(t_vars *v);
 int		check_wall(t_vars *v, double new_x, double new_y);

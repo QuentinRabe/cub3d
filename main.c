@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:25:23 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/14 20:31:03 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 11:36:39 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ int	main(int ac, char **argv)
 {
 	char	**contents;
 	t_vars	vars;
+	t_imgs	imgs;
 
+	vars.imgs = &imgs;
 	vars_addr(SET, &vars);
 	print_banner();
 	if (!has_obvious_error(argv, ac))

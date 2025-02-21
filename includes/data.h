@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 16:45:43 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 11:36:10 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ typedef struct s_vars	t_vars;
 typedef struct s_txt	t_txt;
 typedef struct s_img	t_img;
 typedef struct s_colors	t_colors;
+typedef struct s_imgs	t_imgs;
 
 enum e_opt
 {
@@ -41,6 +42,14 @@ struct s_txt
 	char	*path;
 };
 
+struct s_imgs
+{
+	t_img	*mmap;
+	t_img	*tile;
+	t_img	*floor;
+	t_img	*player;
+};
+
 struct s_img
 {
 	void	*img;
@@ -56,6 +65,7 @@ struct s_vars
 {
 	t_txt		textures[4];
 	t_colors	colors[2];
+	t_imgs		*imgs;
 	char		**map;
 	void		*mlx;
 	void		*mlx_win;

@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:55:58 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 16:46:14 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 11:51:32 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	init_key_pressed(t_vars *v)
 	v->pressed_right = false;
 }
 
-void	init_images(t_img **m, t_img **t, t_img **p, t_img **f)
+void	init_images(void)
 {
 	int		mmap_w;
 	int		mmap_h;
@@ -32,14 +32,14 @@ void	init_images(t_img **m, t_img **t, t_img **p, t_img **f)
 	v = vars_addr(GET, NULL);
 	mmap_w = get_map_width(v->map) * TILE;
 	mmap_h = get_map_height(v->map) * TILE;
-	*m = new_img(NULL,&mmap_w, &mmap_h);
-	*t = new_img("./tiles/crate.xpm", NULL, NULL);
-	*p = new_img("./tiles/player.xpm", NULL, NULL);
-	*f = new_img("./tiles/floor.xpm", NULL, NULL);
-	mmap_addr(SET, *m);
-	tile_addr(SET, *t);
-	player_addr(SET,*p);
-	floor_addr(SET, *f);
+	v->imgs->mmap = new_img(NULL,&mmap_w, &mmap_h);
+	v->imgs->tile = new_img("./tiles/crate.xpm", NULL, NULL);
+	v->imgs->player = new_img("./tiles/player.xpm", NULL, NULL);
+	v->imgs->floor = new_img("./tiles/floor.xpm", NULL, NULL);
+	mmap_addr(SET, v->imgs->mmap);
+	tile_addr(SET, v->imgs->tile);
+	player_addr(SET, v->imgs->player);
+	floor_addr(SET, v->imgs->floor);
 }
 
 static void	find_player_orientation(t_vars *v)
@@ -80,18 +80,13 @@ static void	find_player_position(t_vars *v)
 
 void	mini_map(t_vars *v)
 {
-	t_img	*mmap;
-	t_img	*tile;
-	t_img	*player;
-	t_img	*floor;
-
-	mmap = NULL;
-	tile = NULL;
-	player = NULL;
-	floor = NULL;
+	v->imgs->mmap = NULL;
+	v->imgs->tile = NULL;
+	v->imgs->player = NULL;
+	v->imgs->floor = NULL;
 	init_key_pressed(v);
-	init_images(&mmap, &tile, &player, &floor);
+	init_images();
 	find_player_position(v);
 	find_player_orientation(v);
-	render_mmap(mmap, tile, player, floor);
+	render_mmap();
 }

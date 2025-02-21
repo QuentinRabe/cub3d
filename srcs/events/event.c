@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:29:54 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/15 16:54:18 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 11:51:09 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,14 @@
 
 int	game_loop(t_vars *v)
 {
-	t_img	*m;
-	t_img	*t;
-	t_img	*p;
-	t_img	*f;
-
-	m = mmap_addr(GET, NULL);
-	t = tile_addr(GET, NULL);
-	p = player_addr(GET, NULL);
-	f = floor_addr(GET, NULL);
 	if (v->pressed_w)
-		move_forward(&m, &t, &p, &f);
+		move_forward();
 	if (v->pressed_a)
-		move_left(&m, &t, &p, &f);
+		move_left();
 	if (v->pressed_s)
-		move_backward(&m, &t, &p, &f);
+		move_backward();
 	if (v->pressed_d)
-		move_right(&m, &t, &p, &f);
+		move_right();
 	if (v->pressed_left)
 		rotate_left(v);
 	if (v->pressed_right)
@@ -80,17 +71,8 @@ int	key_press(int key, t_vars *v)
 
 int	end_game(t_vars *v)
 {
-	t_img	*m;
-	t_img	*t;
-	t_img	*p;
-	t_img	*f;
-
-	m = mmap_addr(GET, NULL);
-	t = tile_addr(GET, NULL);
-	p = player_addr(GET, NULL);
-	f = floor_addr(GET, NULL);
 	free_vars(v);
-	destroy_mmap_img(&m, &t, &p, &f);
+	destroy_mmap_img();
 	mlx_destroy_window(v->mlx, v->mlx_win);
 	mlx_destroy_display(v->mlx);
 	free_array(v->map);
