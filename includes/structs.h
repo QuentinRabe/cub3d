@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data.h                                             :+:      :+:    :+:   */
+/*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 09:53:24 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/21 11:36:10 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 15:16:28 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_H
-# define DATA_H
+#ifndef STRUCTS_H
+# define STRUCTS_H
 
 # include <stdbool.h>
+
 typedef struct s_vars	t_vars;
 typedef struct s_txt	t_txt;
 typedef struct s_img	t_img;

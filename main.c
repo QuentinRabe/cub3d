@@ -6,11 +6,10 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/08 13:25:23 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/21 11:36:39 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 15:14:43 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "data.h"
 #include <cub3D.h>
 
 void	print_array(char **arr)

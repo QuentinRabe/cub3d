@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 08:07:04 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/21 11:47:51 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 15:17:15 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ void	render_mmap(void)
 		while (v->map[y][x])
 		{
 			if (v->map[y][x] == '1')
-				put_img_to_img(v->imgs->mmap, v->imgs->tile, x * TILE, y * TILE);
+				put_img_to_img(v->imgs->mmap, v->imgs->tile, \
+x * TILE, y * TILE);
 			if (!is_in(SPACES, v->map[y][x]) && v->map[y][x] != '1')
-				put_img_to_img(v->imgs->mmap, v->imgs->floor, x * TILE, y * TILE);
+				put_img_to_img(v->imgs->mmap, v->imgs->floor, \
+x * TILE, y * TILE);
 			x++;
 		}
 		y++;

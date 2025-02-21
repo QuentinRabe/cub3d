@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:55:58 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/21 11:51:32 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 15:24:55 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	init_images(void)
 	v = vars_addr(GET, NULL);
 	mmap_w = get_map_width(v->map) * TILE;
 	mmap_h = get_map_height(v->map) * TILE;
-	v->imgs->mmap = new_img(NULL,&mmap_w, &mmap_h);
+	v->imgs->mmap = new_img(NULL, &mmap_w, &mmap_h);
 	v->imgs->tile = new_img("./tiles/crate.xpm", NULL, NULL);
 	v->imgs->player = new_img("./tiles/player.xpm", NULL, NULL);
 	v->imgs->floor = new_img("./tiles/floor.xpm", NULL, NULL);
@@ -54,7 +54,7 @@ static void	find_player_orientation(t_vars *v)
 	else if (c == 'S')
 		v->angle = M_PI / 2;
 	else
-	 	v->angle = M_PI;
+		v->angle = M_PI;
 }
 
 static void	find_player_position(t_vars *v)
