@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 08:07:04 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/21 19:41:22 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 20:27:48 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ x * TILE, y * TILE);
 		y++;
 	}
 	put_img_to_img(v->imgs->mmap, v->imgs->player, v->player_x, v->player_y);
+	mlx_put_image_to_window(v->mlx, v->mlx_win, v->imgs->mmap->img, 0, 0);
 	render_rl_mmap();
 }

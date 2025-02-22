@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 07:55:17 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/21 18:35:55 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 20:59:25 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	put_pixel_img(t_img *img, int x, int y, int color)
 {
 	char	*pixel;
 
-	if (color == (int)0x00000000)
+	if (color == (int)0xFF000000)
 		return ;
 	pixel = img->addr + (y * img->size_line + x * (img->bpp / 8));
 	*(int *)pixel = color;

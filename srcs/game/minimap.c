@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 19:55:58 by arabefam          #+#    #+#             */
-/*   Updated: 2025/02/21 15:54:37 by arabefam         ###   ########.fr       */
+/*   Updated: 2025/02/21 20:09:57 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	init_images(void)
 	mmap_w = get_map_width(v->map) * TILE;
 	mmap_h = get_map_height(v->map) * TILE;
 	v->imgs->mmap = new_img(NULL, &mmap_w, &mmap_h);
-	v->imgs->tile = new_img("./tiles/crate.xpm", NULL, NULL);
+	v->imgs->tile = new_img("./tiles/wall.xpm", NULL, NULL);
 	v->imgs->player = new_img("./tiles/player.xpm", NULL, NULL);
 	v->imgs->floor = new_img("./tiles/floor.xpm", NULL, NULL);
 	v->imgs->rl_mmap = new_img(NULL, &size, &size);
